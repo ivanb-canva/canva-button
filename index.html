@@ -1,18 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
-    <title>title</title>
+    <title>Canva Button HTML API - Test Page</title>
+    <link href="https://static.canva.com/static/images/favicon.ico" rel="shortcut icon">
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
-  </head>
-  <body>
-      <h1>Canva Button</h1>
-    <span data-design-type="A4Document" data-button-size="default" data-button-theme="default" data-api-key="Q1N8QTIJwepR9x26wJqKMAED"
-    class="canva-design-button" style="display:none;">Design on Canva</span>
-  <script>
-    (function(c,a,n){var w=c.createElement(a),s=c.getElementsByTagName(a)[0];
-    w.src=n;s.parentNode.insertBefore(w,s);})(document,'script','https://sdk.canva.com/designbutton/v2/api.js');
-  </script>
-  </body>
+</head>
+
+<body>
+    <h1>Canva Button HTML API - Test Page</h1>
+    <div>
+        <form id="button-attrifutes">
+            <fieldset>
+                <legend>Common Attributes</legend>
+                <label>data-api-key</label>
+                <input type="text" id="data-api-key"><br><br>
+                <label>data-editor-file-type</label>
+                <input type="text" id="data-editor-file-type"><br><br>
+                <label>data-editor-publish-label</label>
+                <input type="text" id="data-editor-publish-label"><br><br>
+                <label>data-on-design-publish</label>
+                <input type="text" id="data-on-design-publish" value="designCallback"><br><br>
+                <label>data-on-design-publish-input-design-id</label>
+                <input type="text" id="data-on-design-publish-input-design-id" value="designId"><br><br>
+                <label>data-on-design-publish-input-export-url</label>
+                <input type="text" id="data-on-design-publish-input-export-url" value="exportUrl"><br><br>
+                <label>data-on-design-close</label>
+                <input type="text" id="data-on-design-close" value="designCloseCallback"><br><br>
+            </fieldset>
+            <br><br>
+            <fieldset>
+                <legend>Button Attributes</legend>
+                <label>data-button-theme</label>
+                <input type="text" id="data-button-theme"><br><br>
+                <label>data-button-size</label>
+                <input type="text" id="data-button-size"><br><br>
+            </fieldset>
+            <br><br>
+            <fieldset>
+                <legend>Create-Mode Attributes</legend>
+                <label>data-design-type</label>
+                <input type="text" id="data-design-type" value="Banner"><br><br>
+                <label>data-design-dimensions-units</label>
+                <input type="text" id="data-design-dimensions-units"><br><br>
+                <label>data-design-dimensions-height</label>
+                <input type="text" id="data-design-dimensions-height"><br><br>
+                <label>data-design-dimensions-width</label>
+                <input type="text" id="data-design-dimensions-width"><br><br>
+            </fieldset>
+            <br><br>
+        </form>
+        <button id="apply-button" type="button">Create Design</button>
+        <br><br>
+        <div id="canva-design-button-div"></div>
+    </div>
+    <div>
+        <h2>Output</h2>
+        <form>
+            <fieldset>
+                <legend>Design Details</legend>
+                <label for="exportUrl">exportUrl:</label>
+                <input type="url" name="exportUrl" disabled><br><br>
+                <label for="designId">designId:</label>
+                <input type="text" id="designId" name="designId" value="undefined"><br><br>
+                <pre style="background-color: #ddeeff" word-wrap: break-word;><code id="json-container"></code></pre>
+                <div id=banner></div>
+                <button id="edit-button" type="button">Edit Design</button>
+            </fieldset>
+            <br><br>
+        </form>
+        <div id="canva-design-edit-button-div"></div>
+    </div>
+
+</body>
+
 </html>
