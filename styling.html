@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>title</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+
+    <script>
+        (function(c, a, n) {
+            var w = c.createElement(a),
+                s = c.getElementsByTagName(a)[0];
+            w.src = n;
+            s.parentNode.insertBefore(w, s);
+        })(document, 'script', 'https://sdk.canva.com/designbutton/v2/api.js');
+    </script>
+    <div id=button_css>
+        <h1>Canva Button styling with SVG icons</h1>
+        <p>SVG are inlined as an example, they can be served in any convenient way. CSS class names are just an example too.
+        </p>
+        <table>
+            <tr>
+                <th></th>
+                <th>Large size</th>
+                <th>Default (normal) size</th>
+                <th>Small size</th>
+                <th>Tiny size</th>
+            </tr>
+            <tr>
+                <th>Default theme</th>
+                <td>
+                    <span class="canva-design-button" data-design-type="A4Document" data-button-size="large" data-button-theme="default" data-api-key="Q1N8QTIJwepR9x26wJqKMAED">
+                        Design on Canva
+                    </span>
+                </td>
+                <td>
+                    <span class="canva-design-button" data-design-type="A4Document" data-button-size="default" data-button-theme="default" data-api-key="Q1N8QTIJwepR9x26wJqKMAED">
+                        Design on Canva
+                    </span>
+                </td>
+                <td>
+                    <span class="canva-design-button" data-design-type="A4Document" data-button-size="small" data-button-theme="default" data-api-key="Q1N8QTIJwepR9x26wJqKMAED">
+                        Design on Canva
+                    </span>
+                </td>
+                <td>
+                    <span class="canva-design-button" data-design-type="A4Document" data-button-size="tiny" data-button-theme="default" data-api-key="Q1N8QTIJwepR9x26wJqKMAED">
+                        Design on Canva
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <th>Dark theme</th>
+                <td>
+                    <span class="canva-design-button" data-design-type="A4Document" data-button-size="large" data-button-theme="dark" data-api-key="Q1N8QTIJwepR9x26wJqKMAED">
+                        Design on Canva
+                    </span>
+                </td>
+                <td>
+                    <span class="canva-design-button" data-design-type="A4Document" data-button-size="default" data-button-theme="dark" data-api-key="Q1N8QTIJwepR9x26wJqKMAED">
+                        Design on Canva
+                    </span>
+                </td>
+                <td>
+                    <span class="canva-design-button" data-design-type="A4Document" data-button-size="small" data-button-theme="dark" data-api-key="Q1N8QTIJwepR9x26wJqKMAED">
+                        Design on Canva
+                    </span>
+                </td>
+                <td>
+                    <span class="canva-design-button" data-design-type="A4Document" data-button-size="tiny" data-button-theme="dark" data-api-key="Q1N8QTIJwepR9x26wJqKMAED">
+                        Design on Canva
+                    </span>
+                </td>
+            </tr>
+            </tr>
+            <tr>
+                <th>Light theme</th>
+                <td>
+                    <span class="canva-design-button" data-design-type="A4Document" data-button-size="large" data-button-theme="light" data-api-key="Q1N8QTIJwepR9x26wJqKMAED">
+                        Design on Canva
+                    </span>
+                </td>
+                <td>
+                    <span class="canva-design-button" data-design-type="A4Document" data-button-size="default" data-button-theme="light" data-api-key="Q1N8QTIJwepR9x26wJqKMAED">
+                        Design on Canva
+                    </span>
+                </td>
+                <td>
+                    <span class="canva-design-button" data-design-type="A4Document" data-button-size="small" data-button-theme="light" data-api-key="Q1N8QTIJwepR9x26wJqKMAED">
+                        Design on Canva
+                    </span>
+                </td>
+                <td>
+                    <span class="canva-design-button" data-design-type="A4Document" data-button-size="tiny" data-button-theme="light" data-api-key="Q1N8QTIJwepR9x26wJqKMAED">
+                        Design on Canva
+                    </span>
+                </td>
+            </tr>
+        </table>
+
+    </div>
+
+
+    <script>
+        window.designCallback = function(data) {
+            console.log(data);
+            document.getElementById('json-container').innerHTML = JSON.stringify(data, null, 2);
+            var url = data.exportUrl;
+            var img = document.createElement("img");
+
+            img.src = url;
+            var src = document.getElementById("banner");
+            src.appendChild(img);
+        }
+        window.designCloseCallback = function() {
+            alert("designCloseCallback function called");
+        }
+    </script>
+</body>
+
+</html>
