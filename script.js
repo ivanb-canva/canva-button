@@ -1,4 +1,7 @@
+'use strict';
+
 const api_key = 'Q1N8QTIJwepR9x26wJqKMAED';
+const sdk_url = 'https://sdk.canva.com/designbutton/v2/api.js';
 
 function addCanvaDesignButtonSpan(elementId, buttonText) {
     let canvaDesignButtonDiv = document.getElementById(elementId);
@@ -38,7 +41,7 @@ function loadDesignButtonSDK() {
             s = c.getElementsByTagName(a)[0];
         w.src = n;
         s.parentNode.insertBefore(w, s);
-    })(document, 'script', 'https://sdk.canva.com/designbutton/v2/api.js');
+    })(document, 'script', document.getElementById('data-sdk-url').value);
 }
 
 function updateButtonAttributes() {
@@ -82,6 +85,7 @@ function onDesignIdChange(event) {
 
 window.addEventListener('load', function() {
 
+    document.getElementById("data-sdk-url").value = sdk_url;
     document.getElementById("data-api-key").value = api_key;
     document.getElementById('apply-button').onclick = addCreateDisignButton;
     document.getElementById('edit-button').onclick = addEditDisignButton;
